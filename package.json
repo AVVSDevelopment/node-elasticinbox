@@ -1,0 +1,12 @@
+{
+    "name": "node-elasticinbox",
+    "version": "0.1.0",
+    "desciption": "ElasticInbox REST API wrapper for Node.js",
+    "license": "MIT",
+    "dependencies": {
+        "underscore": "1.4.x"
+    },
+    "author": "Dmitry Gorbunov <atskiisotona@gmail.com> (http://github.com/fuwaneko)",
+    "contributors": [
+    ]
+}
