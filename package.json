@@ -1,13 +1,17 @@
 {
-    "name": "node-elasticinbox",
-    "version": "0.1.0",
-    "desciption": "ElasticInbox REST API wrapper for Node.js",
-    "license": "MIT",
-    "dependencies": {
-        "underscore": "",
-        "validator": ""
-    },
-    "author": "Dmitry Gorbunov <atskiisotona@gmail.com> (http://github.com/fuwaneko)",
-    "contributors": [
-    ]
+  "name": "node-elasticinbox",
+  "version": "0.1.0",
+  "desciption": "ElasticInbox REST API wrapper for Node.js",
+  "license": "MIT",
+  "dependencies": {
+    "validator": "~1.1.1",
+    "request": "~2.21.0",
+    "lodash": "~1.2.1"
+  },
+  "author": "Dmitry Gorbunov <atskiisotona@gmail.com> (http://github.com/fuwaneko)",
+  "contributors": [],
+  "devDependencies": {
+    "mocha": "~1.9.0",
+    "chai": "~1.6.0"
+  }
 }
