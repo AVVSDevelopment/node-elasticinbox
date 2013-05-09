@@ -13,10 +13,12 @@
   },
   "author": "Dmitry Gorbunov <atskiisotona@gmail.com> (http://github.com/fuwaneko)",
   "contributors": [
-      "Vitaly Aminev <v@aminev.me> (http://avvs.co)"
+    "Vitaly Aminev <v@aminev.me> (http://avvs.co)"
   ],
   "devDependencies": {
     "mocha": "~1.9.0",
-    "chai": "~1.6.0"
+    "chai": "~1.6.0",
+    "jsdoc": "~3.2.0-dev",
+    "async": "~0.2.8"
   }
 }
