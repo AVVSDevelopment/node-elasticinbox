@@ -5,7 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "validator": "~1.1.1",
-    "lodash": "~1.2.1"
+    "lodash": "~1.2.1",
+    "async": "~0.2.8"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha -R list ./tests"
