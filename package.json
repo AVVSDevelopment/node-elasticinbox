@@ -1,8 +1,9 @@
 {
     "name": "node-elasticinbox",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "desciption": "ElasticInbox REST API wrapper for Node.js",
     "license": "MIT",
+    "main": "elasticinbox.js",
     "dependencies": {
         "underscore": "",
         "validator": ""

@@ -50,6 +50,9 @@ var ElasticInbox = function () {
             callback(error, null)
         })
 
+        if (options.content && typeof options.content == "string")
+            request.write(options.content)
+
         request.end()
     }
 
@@ -375,9 +378,10 @@ var ElasticInbox = function () {
     }
 
     /**
+     * Get message by UUID
      * @memberof Message#
-     * @param domain
-     * @param user
+     * @param domain {String} Account domain
+     * @param user {String} Account name
      * @param uuid
      * @param params
      * @param callback
@@ -405,6 +409,41 @@ var ElasticInbox = function () {
         options.method = "GET"
 
         query(options, 200, callback)
+    }
+
+    /**
+     * Saves message to ElasticInbox
+     * @memberof Message#
+     * @param domain {String} Account domain
+     * @param user {String} Account name
+     * @param label {UUID} optional label to save under
+     * @param content {String} EML data
+     * @param callback
+     */
+    Message.prototype.create = function(domain, user, label, content, callback) {
+        if (!v.check(user + "@" + domain).isEmail())
+            return callback("Invalid arguments format: should be domain + username, forming email username@domain", null)
+        if (!content)
+            return callback("Empty message", null)
+
+        var url = "/rest/v2/" + encodeURIComponent(domain) + "/" + encodeURIComponent(user) + "/mailbox/message"
+
+        if (label && label != null)
+        {
+            if (typeof label == "array")
+                _.each(label, function(_label) {
+                    url += "&label=" + encodeURIComponent(_label)
+                })
+            else if (typeof label == "string")
+                url += "&label=" + encodeURIComponent(label)
+        }
+
+        var options = _.clone(this.options)
+        options.path = url
+        options.method = "POST"
+        options.content = content;
+
+        query(options, 201, callback)
     }
 
     /**
