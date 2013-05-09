@@ -1,6 +1,6 @@
 {
   "name": "node-elasticinbox",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "desciption": "ElasticInbox REST API wrapper for Node.js",
   "license": "MIT",
   "dependencies": {
@@ -8,7 +8,8 @@
     "lodash": "~1.2.1"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R list ./tests"
+    "test": "mocha -R spec ./tests",
+    "prepublish": "jsdoc -d doc -l lib/elasticinbox.js lib/account/index.js lib/label/index.js lib/mailbox/index.js lib/message/index.js README.md"
   },
   "author": "Dmitry Gorbunov <atskiisotona@gmail.com> (http://github.com/fuwaneko)",
   "contributors": [
